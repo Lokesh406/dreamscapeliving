@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login - Interior Design</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background: linear-gradient(to right, #f7f2ec, #f0ebe3);
+            margin: 0;
+        }
+        header {
+            width: 100%;
+            background-color: rgb(219, 218, 217);
+            padding: 10px 0;
+            text-align: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+        .custom-spacing {
+            margin: 5px;
+        }
+        .login-wrapper {
+            display: flex;
+            width: 70%;
+            max-width: 1000px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            margin-top: 80px; /* To prevent overlap with fixed header */
+        }
+        .login-form {
+            width: 50%;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .login-image {
+    width: 50%;
+    background: url('loginpic.jpg') no-repeat center center;
+    background-size: cover;
+}
+
+        
+        h2 {
+            font-family: 'Roboto', sans-serif;
+            color: #6a4d36;
+            font-weight: bold;
+        }
+        .form-control {
+            border-radius: 5px;
+        }
+        .btn-primary {
+            background-color: #c9a375;
+            border-color: #c9a375;
+        }
+        .btn-primary:hover {
+            background-color: #a9845c;
+            border-color: #a9845c;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Header at the Top -->
+    <header>
+        <div class="container">
+            <a href="home.html"><button type="button" class="btn btn-info custom-spacing">HOME</button></a>
+            <a href="about.html"><button type="button" class="btn btn-info custom-spacing">ABOUT US</button></a>
+            <a href="portfolio.html"><button type="button" class="btn btn-info custom-spacing">PORTFOLIO</button></a>
+            <a href="contact.html"><button type="button" class="btn btn-info custom-spacing">CONTACT</button></a>
+            <a href="signup.html"><button type="button" class="btn btn-info custom-spacing">SIGNUP</button></a>
+            <a href="login.html"><button type="button" class="btn btn-info custom-spacing">LOGIN</button></a>
+        </div>
+    </header>
+
+    <!-- Login Section -->
+    <div class="login-wrapper">
+        <div class="login-form">
+            <h2 class="text-center mb-4">Login</h2>
+            <form action="index.html">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" id="email" placeholder="Type your email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control" id="password" placeholder="Type your password" required>
+                </div>
+                <div class="form-group form-check d-flex justify-content-between">
+                    <input type="checkbox" class="form-check-input" id="remember">
+                    <label class="form-check-label" for="remember">Remember me</label>
+                    <a href="#">Forgot password?</a>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Log in</button>
+                <div class="text-center mt-3">Or</div>
+                <button class="btn btn-light btn-block mt-2">Sign in with Google</button>
+            </form>
+        </div>
+        <div class="login-image"></div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>
