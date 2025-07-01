@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dreamscape Designs</title>
+
+    <!-- Bootstrap CDN -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <style>
+        body {
+            background-color: rgb(255, 241, 220);
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: rgb(109, 111, 112);
+            padding: 10px 0;
+        }
+
+        .custom-spacing {
+            margin-right: 10px;
+        }
+
+        .navbar-container {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding-right: 20px;
+        }
+
+        img {
+            height: 400px;
+            width: 650px;
+            border-radius: 15px 50px 30px;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .chatbox-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+
+        .chatbox-icon {
+            width: 100%;
+            height: 100%;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .chatbox-icon:hover {
+            transform: scale(1.1);
+            opacity: 0.8;
+        }
+
+        .chatbox-container {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            width: 320px;
+            background: white;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            z-index: 1000;
+            opacity: 0;
+            transform: translateY(20px);
+            pointer-events: none;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+
+        .chatbox-container.open {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
+        }
+
+        .chatbox-header {
+            background-color: #007bff;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            font-size: 16px;
+            position: relative;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            cursor: pointer;
+            font-size: 18px;
+            color: white;
+        }
+
+        .close-btn:hover {
+            color: #ddd;
+        }
+
+        .chatbox-messages {
+            height: 250px;
+            overflow-y: auto;
+            padding: 10px;
+            background-color: #f1f1f1;
+            font-size: 14px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .chatbox-input {
+            display: flex;
+            padding: 10px;
+            border-top: 1px solid #ddd;
+            background: white;
+        }
+
+        .chatbox-input input {
+            flex: 1;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+            outline: none;
+        }
+
+        .chatbox-input button {
+            margin-left: 5px;
+            padding: 8px 12px;
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background-color 0.3s ease-in-out, transform 0.2s;
+        }
+
+        .chatbox-input button:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+        }
+
+        .message {
+            display: flex;
+            margin: 5px;
+            max-width: 80%;
+        }
+
+        .user-message {
+            justify-content: flex-end;
+        }
+
+        .agent-message {
+            justify-content: flex-start;
+        }
+
+        .message-bubble {
+            padding: 8px 12px;
+            border-radius: 10px;
+            max-width: 70%;
+            word-wrap: break-word;
+            display: inline-block;
+        }
+
+        .user-message .message-bubble {
+            background-color: #007bff;
+            color: white;
+            border-bottom-right-radius: 0;
+        }
+
+        .agent-message .message-bubble {
+            background-color: #e1e1e1;
+            color: black;
+            border-bottom-left-radius: 0;
+        }
+
+        .message-time {
+            font-size: 12px;
+            margin-top: 5px;
+            opacity: 0.7;
+            text-align: right;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <div class="navbar-container">
+            <!-- <a href="home.html"><button type="button" class="btn btn-info custom-spacing">HOME</button></a> -->
+            <a href="about.html"><button type="button" class="btn btn-info custom-spacing">ABOUT US</button></a>
+            <a href="portfolio.html"><button type="button" class="btn btn-info custom-spacing">PORTFOLIO</button></a>
+            <a href="contact.html"><button type="button" class="btn btn-info custom-spacing">CONTACT</button></a>
+        </div>
+    </header>
+
+    <br><br>
+
+    <!-- Main Content -->
+    <center>
+        <p>The key to great design is capturing the spirit of the client and the essence of the space.</p>
+        <br><br>
+        <h2>MOST POPULAR INTERIOR DESIGN STYLES</h2>
+        <br><br>
+
+        <h2>Transitional Interior Design Style</h2><br>
+        <a href="./ti.html"><img src="ti.jpg" alt="Transitional Interior Design"></a><br><br>
+
+        <h2>Modern Interior Design Style</h2><br>
+        <a href="./mo.html"><img src="mo.jpg" alt="Modern Interior Design"></a><br><br>
+
+        <h2>Contemporary Interior Design Style</h2><br>
+        <a href="./t3.html"><img src="t3.jpg" alt="Contemporary Interior Design"></a><br><br>
+
+        <h2>Scandinavian Interior Design Style</h2><br>
+        <a href="./r2.html"><img src="r5.jpg" alt="Scandinavian Interior Design"></a><br><br>
+
+        <h2>Eclectic Interior Design Style</h2><br>
+        <a href="./r6.html"><img src="r6.jpg" alt="Eclectic Interior Design"></a><br><br>
+
+        <h2>Art Deco Interior Design Style</h2><br>
+        <a href="./r7.html"><img src="r7.jpg" alt="Art Deco Interior Design"></a><br><br>
+
+        <h2>Hollywood Glam Interior Design Style</h2><br>
+        <a href="./r8.html"><img src="r8.jpg" alt="Hollywood Glam Interior Design"></a>
+    </center>
+
+    <!-- Chatbox Floating Button -->
+    <button class="chatbox-btn" onclick="toggleChatbox()">
+        <img src="chatbox.png" alt="Chat" class="chatbox-icon">
+    </button>
+
+    <!-- Chatbox Container -->
+    <div class="chatbox-container" id="chatbox">
+        <div class="chatbox-header">
+            Chat with Us
+            <span class="close-btn" onclick="toggleChatbox()">✖</span>
+        </div>
+        <div class="chatbox-messages" id="chatboxMessages"></div>
+        <div class="chatbox-input">
+            <input type="text" id="userInput" placeholder="Ask anything about design..." onkeypress="handleKeyPress(event)">
+            <button onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+
+    <script>
+        let chatState = {
+            isOpen: false,
+            unreadCount: 0
+        };
+
+        function toggleChatbox() {
+            const chatbox = document.getElementById("chatbox");
+            chatState.isOpen = !chatState.isOpen;
+
+            if (chatState.isOpen) {
+                chatbox.classList.add("open");
+                chatState.unreadCount = 0;
+                document.getElementById("userInput").focus();
+            } else {
+                chatbox.classList.remove("open");
+            }
+        }
+
+        function sendMessage() {
+            const userInput = document.getElementById("userInput");
+            const message = userInput.value.trim();
+
+            if (message === "") return;
+
+            addMessage(message, "user");
+            userInput.value = "";
+
+            setTimeout(() => {
+                const response = getChatbotResponse(message);
+                addMessage(response, "agent");
+            }, 1000);
+        }
+
+        function addMessage(text, sender) {
+            const messagesContainer = document.getElementById("chatboxMessages");
+            const messageDiv = document.createElement("div");
+            const timestamp = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+
+            messageDiv.className = `message ${sender}-message`;
+            messageDiv.innerHTML = `
+                <div class="message-bubble">
+                    <div class="message-text">${text}</div>
+                    <div class="message-time">${timestamp}</div>
+                </div>
+            `;
+
+            messagesContainer.appendChild(messageDiv);
+            messagesContainer.scrollTo({ top: messagesContainer.scrollHeight, behavior: 'smooth' });
+        }
+
+        function handleKeyPress(event) {
+            if (event.key === "Enter") {
+                sendMessage();
+            }
+        }
+
+        function getChatbotResponse(userText) {
+            const lowerText = userText.toLowerCase();
+            if (lowerText.includes("hi") || lowerText.includes("hello")) {
+                return "Hello! How can I assist you today?";
+            } else if (lowerText.includes("how are you")) {
+                return "I'm just a bot, but I'm here to help you with your design queries!";
+            } else if (lowerText.includes("thank you")) {
+                return "You're welcome! If you have any more questions, feel free to ask.";
+            } else if (lowerText.includes("goodbye") || lowerText.includes("bye")) {
+                return "Goodbye! Have a great day!";
+            } else if (lowerText.includes("living room")) {
+                return "For a living room, consider a cozy sectional sofa and warm lighting.";
+            } else if (lowerText.includes("bedroom")) {
+                return "A calming color palette works wonders in a bedroom.";
+            } else if (lowerText.includes("furniture")) {
+                return "Placement is key! Make sure to leave enough space for movement.";
+            } else if (lowerText.includes("color")) {
+                return "Choosing a color scheme can set the mood for your entire space. What vibe are you aiming for?";
+            } else if (lowerText.includes("decor")) {
+                return "Decor elements like cushions, rugs, and wall art can add personality to your space.";
+            } else if (lowerText.includes("lighting")) {
+                return "Good lighting can transform a room. Consider a mix of ambient, task, and accent lighting.";
+            } else {
+                return "That's an interesting question! Can you provide more details or specify what you're looking for?";
+            }
+        }
+    </script>
+</body>
+</html>c:\xampp\htdocs\Project-5\chatbox.png
